@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Patient Register</title>
+</head>
+<body>
+
+<form action="#" th:object="${patientRecord}" method="post" th:action="@{/general/createRecord}">
+<p Style="color:red;" th:text="${errorMsg}"></p>
+<table>
+
+
+<tr>
+<td>Patient username</td>
+<td><input type="text" th:field="*{patientUsername}"></td>
+</tr>
+
+<tr>
+<td>prescription</td>
+<td><input type="text" th:field="*{prescriptions}"></td>
+</tr>
+
+<tr>
+<td>comments</td>
+<td><input type="text" th:field="*{comments}"></td>
+</tr>
+
+<tr>
+<td><input type="submit" value="create"></td>
+</tr>
+
+</table>
+</form>
+
+<a th:href="@{/nurse/welcome}">home page</a>
+
+</body>
+</html>

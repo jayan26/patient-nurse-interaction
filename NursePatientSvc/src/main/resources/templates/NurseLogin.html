@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Patient Login</title>
+</head>
+<body>
+
+<form action="#" th:object="${loginCredentials}" method="post" th:action="@{/nurse/nurseLoginProcess}">
+<p Style="color:red;" th:text="${credentialsError}"></p>
+<p Style="color:green;" th:text="${message}"></p>
+<h4 style="color: black;" th:text="${session.patientUsername}">SessionID</h4>
+<table>
+<tr>
+<td>Login ID</td>
+<td><input type="text" th:field="*{username}"></td>
+</tr>
+
+<tr>
+<td>password</td>
+<td><input type="password" th:field="*{password}"></td>
+</tr>
+
+<tr>
+<td><input type="submit" value="login"></td>
+</tr>
+
+<tr>
+<td><a th:href="@{forgotpassword}">Forgot Password</a></td>
+</tr>
+
+</table>
+</form>
+
+</body>
+</html>
